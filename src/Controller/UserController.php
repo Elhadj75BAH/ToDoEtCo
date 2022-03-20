@@ -4,44 +4,55 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserController extends AbstractController
 {
+    private $encoder;
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder=$encoder;
+    }
+
     /**
      * @Route("/users", name="user_list")
      */
-    public function listAction()
+    public function listAction(UserRepository $userRepository):Response
     {
-        return $this->render('user/list.html.twig', ['users' => $this->getDoctrine()->getRepository('AppBundle:User')->findAll()]);
+        return $this->render('user/list.html.twig', [
+            'users' => $userRepository->findAll()
+        ]);
     }
 
     /**
      * @Route("/users/create", name="user_create")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request, UserRepository $userRepository)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
-            $user->setPassword($password);
+        if ($form->isSubmitted()&&$form->isValid()) {
 
-            $em->persist($user);
-            $em->flush();
+            $password = $this->encoder->encodePassword($user,'password');
+            $user->setPassword($password);
+            $userRepository->add($user);
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
             return $this->redirectToRoute('user_list');
         }
 
-        return $this->render('user/create.html.twig', ['form' => $form->createView()]);
+        return $this->render('user/create.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 
     /**
@@ -53,17 +64,18 @@ class UserController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
+        if ($form->isSubmitted()&& $form->isValid()) {
+            $password = $this->encoder->encodePassword($user,'password');
             $user->setPassword($password);
-
-            $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', "L'utilisateur a bien été modifié");
 
             return $this->redirectToRoute('user_list');
         }
 
-        return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'user' => $user]);
+        return $this->render('user/edit.html.twig', [
+            'form' => $form->createView(),
+            'user' => $user
+        ]);
     }
 }
