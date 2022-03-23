@@ -22,6 +22,17 @@ class TaskController extends AbstractController
     }
 
     /**
+     * @Route("/tasksActive", name="task_valid", methods={"GET"})
+     */
+    public function taskActive(TaskRepository $taskRepository):Response
+    {
+        return $this->render('task/done.html.twig',[
+            'taskIsdone'=>$taskRepository->findBy(['isDone'=>'1'])
+            ]
+        );
+    }
+
+    /**
      * @Route("/tasks/create", name="task_create" ,methods={"GET","POST"})
      */
     public function createAction(Request $request, TaskRepository $taskRepository)
