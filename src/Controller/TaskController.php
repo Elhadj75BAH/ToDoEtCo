@@ -18,7 +18,19 @@ class TaskController extends AbstractController
     public function listAction(TaskRepository $taskRepository):Response
     {
         return $this->render('task/list.html.twig',
-            ['tasks' =>$taskRepository ->findAll()]);
+            ['tasks' =>$taskRepository ->findBy(['isDone'=>'0'])
+            ]);
+    }
+
+    /**
+     * @Route("/tasksActive", name="task_valid", methods={"GET"})
+     */
+    public function taskActive(TaskRepository $taskRepository):Response
+    {
+        return $this->render('task/done.html.twig',[
+            'taskIsdone'=>$taskRepository->findBy(['isDone'=>'1'])
+            ]
+        );
     }
 
     /**
@@ -26,12 +38,14 @@ class TaskController extends AbstractController
      */
     public function createAction(Request $request, TaskRepository $taskRepository)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted()&& $form->isValid()) {
+            $task->setUser($this->getUser());
             $taskRepository->add($task);
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
 
@@ -46,6 +60,7 @@ class TaskController extends AbstractController
      */
     public function editAction(Task $task, Request $request, TaskRepository $taskRepository)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
@@ -69,6 +84,7 @@ class TaskController extends AbstractController
      */
     public function toggleTaskAction(Task $task, TaskRepository $taskRepository)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $task->toggle(!$task->isDone());
         $taskRepository->add($task);
 
@@ -82,6 +98,7 @@ class TaskController extends AbstractController
      */
     public function deleteTaskAction(Task $task, Request $request, TaskRepository $taskRepository)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         if($this->isCsrfTokenValid('delete'.$task->getId(),$request->request->get('_token'))){
             $taskRepository->remove($task);
         }
