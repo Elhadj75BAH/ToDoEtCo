@@ -34,7 +34,7 @@ class AppFixtures extends Fixture
         for($t = 0; $t<25; $t++){
             $task = new Task();
             $task->setTitle("tache numéro$t");
-            $task->setContent("une tache à réalisé pour ... ");
+            $task->setContent("une tache à réaliser pour ... ");
             $task->setUser($users [array_rand($users)]);
 
             $manager->persist($task);
