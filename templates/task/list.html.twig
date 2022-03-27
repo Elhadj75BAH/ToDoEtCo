@@ -18,6 +18,7 @@
                     <small class="text-muted">ajouté par {{ task.user }}</small>
                 </div>
                 <div>
+                    {% if app.user %}
                     <form action="{{ path('task_toggle', {'id' : task.id }) }}">
                         <button class="btn btn-success btn-sm pull-right">
                             {% if not task.isDone %}Marquer comme faite{% else %}Marquer non terminée{% endif %}
@@ -27,6 +28,7 @@
                         <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ task.id) }}">
                         <button class="btn btn-danger btn-sm pull-right">Supprimé</button>
                     </form>
+                    {% endif %}
                 </div>
             </div>
         </div>
