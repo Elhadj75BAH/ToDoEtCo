@@ -75,6 +75,12 @@
         "symfony/polyfill-php72": "*"
     },
     "scripts": {
+        "prepare": [
+            "bin/console doctrine:database:drop --if-exists -f",
+            "bin/console doctrine:database:create",
+            "bin/console doctrine:schema:update -f",
+            "bin/console doctrine:fixtures:load -n"
+        ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
