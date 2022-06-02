@@ -15,16 +15,14 @@ use Symfony\Component\HttpFoundation\Request;
 class UserController extends AbstractController
 {
 
-    public function __construct()
-    {
 
-    }
 
     /**
      * @Route("/users", name="user_list")
      */
     public function listAction(UserRepository $userRepository):Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('user/list.html.twig', [
             'users' => $userRepository->findAll()
         ]);
@@ -37,6 +35,7 @@ class UserController extends AbstractController
                                  UserRepository $userRepository,
                                  UserPasswordHasherInterface $userPasswordHasher)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
@@ -70,6 +69,7 @@ class UserController extends AbstractController
                                UserPasswordHasherInterface $userPasswordHasher,
                                UserRepository $userRepository)
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
@@ -100,6 +100,7 @@ class UserController extends AbstractController
      */
     public function profileUser(): Response
     {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
         return $this->render('user/profile.html.twig');
     }
 }
