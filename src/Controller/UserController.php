@@ -35,7 +35,7 @@ class UserController extends AbstractController
                                  UserRepository $userRepository,
                                  UserPasswordHasherInterface $userPasswordHasher)
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
@@ -69,7 +69,7 @@ class UserController extends AbstractController
                                UserPasswordHasherInterface $userPasswordHasher,
                                UserRepository $userRepository)
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
