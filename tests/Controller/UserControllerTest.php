@@ -101,5 +101,21 @@ class UserControllerTest extends WebTestCase
     }
 
 
+    public function  testProfileUser()
+    {
+        $client = static::createClient();
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $client->loginUser($testUser);
+
+        $client->request('GET', '/profile');
+        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+
+        $userRepository = static ::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $this->assertNull($testUser);
+
+    }
+
 
 }
