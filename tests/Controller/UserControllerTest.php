@@ -18,10 +18,10 @@ class UserControllerTest extends WebTestCase
 
 
         $client->submitForm('Inscription',[
-            'registration_form[username]'=>'Elhdajbaheeddtt222365',
+            'registration_form[username]'=>'username2',
             'registration_form[password][first]'=>'Password',
             'registration_form[password][second]'=>'Password',
-            'registration_form[email]'=>'elhaddjbahtebbstttyyeee213423@test.fr',
+            'registration_form[email]'=>'username2@test.fr',
             'registration_form[agreeTerms]'=>'1',
         ]);
         $this->assertResponseRedirects();
@@ -66,10 +66,10 @@ class UserControllerTest extends WebTestCase
 
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
         $client->submitForm('Ajouter',[
-            'user[username]'=>'sorry_barrrr',
+            'user[username]'=>'flow2',
             'user[password][first]'=>'Password',
             'user[password][second]'=>'Password',
-            'user[email]'=>'saranbarrrr@test.fr',
+            'user[email]'=>'flow2@test.fr',
         ]);
         $this->assertResponseRedirects();
 

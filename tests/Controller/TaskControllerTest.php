@@ -79,7 +79,7 @@ class TaskControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
 
-        $client->request('POST', '/tasks/28/delete');
+        $client->request('POST', '/tasks/32/delete');
 
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
