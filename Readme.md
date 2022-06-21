@@ -90,12 +90,13 @@ Ou Saisir les accès ci-dessous dans la page "se connecter".
 
 
     
-        "Nom d'utilisateur": "username0",
-        "Mot de passe ": "password"
+        Nom d'utilisateur: username0
+        Mot de passe : password
     
 
 
 # Annexe :
+- Issues : https://github.com/Elhadj75BAH/TodoEtCo/issues
 
 
 
