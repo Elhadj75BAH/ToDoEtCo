@@ -36,16 +36,19 @@ class TaskControllerTest extends WebTestCase
         $testUser = $userRepository->findOneByUsername('Elhdajbah6');
         $client->loginUser($testUser);
 
-        $client->request('GET', '/tasks/26/edit');
+        $client->request('GET', '/tasks/29/edit');
 
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
         $client->submitForm('Modifier',[
-            'task[title]'=>'Une tache à faire en urgence ! ',
+            'task[title]'=>'Une tache à faire en urgence  ! ',
             'task[content]'=>'vous créerez cette tache en se référent sur l\'exemple fourni dans les documents de symfony'
         ]);
         $this->assertResponseRedirects();
 
         $client->followRedirect();
+        $taskRepository = static ::getContainer()->get(TaskRepository::class);
+        $task = $taskRepository->find(29);
+        $this->assertNull($task);
     }
 
 
@@ -76,7 +79,7 @@ class TaskControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
 
-        $client->request('POST', '/tasks/28/delete');
+        $client->request('POST', '/tasks/32/delete');
 
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
