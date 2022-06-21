@@ -90,7 +90,7 @@ class UserControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
 
         $client->submitForm('Modifier',[
-            'user[username]'=>'barryyy',
+            'user[username]'=>'baro',
             'user[password][first]'=>'password',
             'user[password][second]'=>'password',
             'user[email]'=>'barry@test.fr',
@@ -98,6 +98,11 @@ class UserControllerTest extends WebTestCase
 
         $this->assertResponseRedirects();
         $client->followRedirect();
+
+        $userRepository = static ::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->find(48);
+        $this->assertNull($testUser);
+
     }
 
 
