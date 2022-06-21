@@ -9,7 +9,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 class TaskController extends AbstractController
 {
@@ -97,15 +96,19 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks/{id}/delete", name="task_delete" ,methods={"POST"})
      */
-    public function deleteTaskAction(Task $task, Request $request, TaskRepository $taskRepository, UserInterface $user)
+    public function deleteTaskAction(Task $task, TaskRepository $taskRepository)
     {
+
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        if($this->isCsrfTokenValid('delete'.$task->getId(),$request->request->get('_token'))){
+        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN') ||
+            ($task->getUser() === null))
+        {
             $taskRepository->remove($task);
+            $this->addFlash('success', 'La tâche a bien été supprimée.');
+            return $this->redirectToRoute('task_list');
         }
-
-        $this->addFlash('success', 'La tâche a bien été supprimée.');
-
+        $this->addFlash('error','Vous ne pouvez pas supprimer cette tache ');
         return $this->redirectToRoute('task_list');
     }
+
 }
