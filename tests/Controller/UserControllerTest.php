@@ -122,5 +122,17 @@ class UserControllerTest extends WebTestCase
 
     }
 
+    public function  testListUsers()
+    {
+        $client = static::createClient();
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $client->loginUser($testUser);
+
+        $client->request('GET', '/users');
+        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+
+    }
+
 
 }
