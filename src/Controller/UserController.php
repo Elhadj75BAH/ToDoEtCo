@@ -20,9 +20,9 @@ class UserController extends AbstractController
     /**
      * @Route("/users", name="user_list")
      */
-    public function listAction(UserRepository $userRepository):Response
+    public function listUsers(UserRepository $userRepository):Response
     {
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('user/list.html.twig', [
             'users' => $userRepository->findAll()
         ]);
