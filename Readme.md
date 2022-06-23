@@ -75,12 +75,6 @@ Mettre a jour les entités en base de donnée
 - php -S localhost:8000 -t public
 - sur votre navigateur écrire l'url :http://localhost:8000/
 
-### Documentation du site :
-Pour consulter la documentation  :
-- l'url : 
-
-- 
-
 
 ### Compte :
 Pour vous connecter, vous pouvez vous inscrire directement depuis la page d'accueil.
@@ -97,6 +91,7 @@ Ou Saisir les accès ci-dessous dans la page "se connecter".
 
 # Annexe :
 - Issues : https://github.com/Elhadj75BAH/TodoEtCo/issues
+- Code climate : https://codeclimate.com/github/Elhadj75BAH/ToDoEtCo
 
 
 
