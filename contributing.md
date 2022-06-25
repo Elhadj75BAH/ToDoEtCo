@@ -10,4 +10,9 @@ Pour contribuer à ce projet, **il faut :**
   - `git checkout -b feat/ma-contribution`
 
 
-  - proposez votre contribution via le pull request sur github.
+
+- Avant de proposer votre contribution vous devez faire les tests et avoir au moins 70% de couverture 
+
+
+  - proposez votre contribution via le pull request sur github
+      - expliquez de manière détaillée dans la partie 'comment' votre contribution.
