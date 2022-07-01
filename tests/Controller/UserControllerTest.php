@@ -115,9 +115,9 @@ class UserControllerTest extends WebTestCase
 
         $client->request('GET', '/profile');
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
-
+        /** @var UserRepository $userRepository */
         $userRepository = static ::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $testUser = $userRepository->find(54);
         $this->assertNull($testUser);
 
     }
@@ -133,6 +133,22 @@ class UserControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
 
     }
+
+
+    public function testLogOut()
+    {
+
+        $client = static::createClient();
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $client->loginUser($testUser);
+
+         $crawler= $client->request('GET', '/');
+        $crawler->selectLink('Se déconnecter')->link();
+        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+
+    }
+
 
 
 }
