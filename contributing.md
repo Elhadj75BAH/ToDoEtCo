@@ -11,7 +11,8 @@ Pour contribuer à ce projet, **il faut :**
 
 
 
-- Avant de proposer votre contribution vous devez faire les tests et avoir au moins 70% de couverture 
+- Avant de faire le pull request de votre contribution, vous devez faire les tests nécessaires.
+    - Dans le dossier **tests** à la racine du projet
 
 
   - proposez votre contribution via le pull request sur github
