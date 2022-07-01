@@ -115,10 +115,6 @@ class UserControllerTest extends WebTestCase
 
         $client->request('GET', '/profile');
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
-        /** @var UserRepository $userRepository */
-        $userRepository = static ::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->find(54);
-        $this->assertNull($testUser);
 
     }
 
