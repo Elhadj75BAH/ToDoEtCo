@@ -48,6 +48,10 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 - Composer
 
 
+## Version du projet
+ 
+- symfony 5.4 
+
 ## Pour installer ce projet :
 
 1 Clonez le dépôt depuis Github.
@@ -75,6 +79,23 @@ Mettre a jour les entités en base de donnée
 - php -S localhost:8000 -t public
 - sur votre navigateur écrire l'url :http://localhost:8000/
 
+
+## Les tests Unitaires :
+Tapez la commande ci-dessous 
+
+    Pour faire le test unitaire sur l'entité User : php bin/phpunit tests/Entity/UserEntityTest.php --testdox
+
+
+    Pour faire le test unitaire sur l'entité Task : php bin/phpunit tests/Entity/TaskTest.php --testdox
+
+
+## Les tests fonctionnels
+Tapez la commande ci-dessous
+
+    Pour le controller Default : php bin/phpunit tests/Controller/DefaultControllerTest.php --testdox
+    Pour la Controller Task : php bin/phpunit tests/Controller/TaskControllerTest.php --testdox
+    Pour le Controller User : php bin/phpunit tests/Controller/UserControllerTest.php --testdox
+   
 
 ### Compte :
 Pour vous connecter, vous pouvez vous inscrire directement depuis la page d'accueil.
