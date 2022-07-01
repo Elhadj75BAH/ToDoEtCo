@@ -46,9 +46,6 @@ class TaskControllerTest extends WebTestCase
         $this->assertResponseRedirects();
 
         $client->followRedirect();
-        $taskRepository = static ::getContainer()->get(TaskRepository::class);
-        $task = $taskRepository->find(29);
-        $this->assertNull($task);
     }
 
 
@@ -70,7 +67,6 @@ class TaskControllerTest extends WebTestCase
     }
 
 
-
     public function testDeleteTaskAction()
     {
         $client = static::createClient();
@@ -79,14 +75,14 @@ class TaskControllerTest extends WebTestCase
         $client->loginUser($testUser);
 
 
-        $client->request('POST', '/tasks/32/delete');
+        $client->request('POST', '/tasks/39/delete');
 
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
 
         $this->assertResponseRedirects();
-
+        /** @var TaskRepository $taskRepository */
         $taskRepository = static ::getContainer()->get(TaskRepository::class);
-        $task = $taskRepository->find(28);
+        $task = $taskRepository->find(39);
         $this->assertNull($task);
 
     }
