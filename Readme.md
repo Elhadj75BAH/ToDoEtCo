@@ -37,7 +37,7 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 
 - Il est demandé de fournir un rapport de couverture de code au terme du projet. Il faut que le taux de couverture soit supérieur à 70 %.
 
-######
+
 ## Requirements :
 - Apache 2.4
 
@@ -57,26 +57,32 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 1 Clonez le dépôt depuis Github.
 
 2 Installez les dépendances du projet
-- composer install
+
+    composer install
 
 
 3 N'oubliez pas de remplir le fichier .env de votre base de donnée comme :
-- DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
+
+    DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
 
 ### Base de données avec doctrine
 
 4 Créer la base de donnée si cette base n'existe pas encore
-- bin/console doctrine:database:create
 
-Mettre a jour les entités en base de donnée
-- bin/console doctrine:schema:update -f
+    bin/console doctrine:database:create
+
+Mettre à jour les entités en base de donnée
+
+    bin/console doctrine:schema:update -f
 
 ### Fixture :
 5 Lancer les fixtures pour avoir des données de test en base
-- bin/console doctrine:fixtures:load
+
+    bin/console doctrine:fixtures:load
 
 6 Démarrer Votre serveur avec la commande ci-dessous :
-- php -S localhost:8000 -t public
+
+    php -S localhost:8000 -t public
 - sur votre navigateur écrire l'url :http://localhost:8000/
 
 
