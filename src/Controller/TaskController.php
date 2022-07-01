@@ -100,7 +100,7 @@ class TaskController extends AbstractController
     {
 
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN') ||
+        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN') &&
             ($task->getUser() === null))
         {
             $taskRepository->remove($task);
