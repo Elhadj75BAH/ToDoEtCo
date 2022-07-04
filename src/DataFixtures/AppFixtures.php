@@ -18,8 +18,16 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
 
+        $admin = new User();
+        $hash = $this->userPasswordHasher->hashPassword($admin,'azert123');
+        $admin->setUsername('admin');
+        $admin->setPassword($hash);
+        $admin->setEmail('admin@admin.fr');
+        $admin->setRoles(["ROLE_ADMIN"]);
+        $manager->persist($admin);
+
          $users = [];
-         for($u = 0; $u<25; $u++){
+         for($u = 0; $u<10; $u++){
              $user = new User();
              $hash = $this->userPasswordHasher->hashPassword($user,'password');
              $user->setUsername("username$u");
@@ -30,11 +38,19 @@ class AppFixtures extends Fixture
          }
         //
 
+        for($tk = 0; $tk<5; $tk++){
+            $taskanonym = new Task();
+            $taskanonym->setTitle("La tache anonyme numéro$tk");
+            $taskanonym->setContent("une tache ANONYME à réaliser ");
 
-        for($t = 0; $t<25; $t++){
+            $manager->persist($taskanonym);
+
+        }
+
+        for($t = 6; $t<25; $t++){
             $task = new Task();
             $task->setTitle("tache numéro$t");
-            $task->setContent("une tache à réaliser pour ... ");
+            $task->setContent("une tache à réaliser ");
             $task->setUser($users [array_rand($users)]);
 
             $manager->persist($task);
