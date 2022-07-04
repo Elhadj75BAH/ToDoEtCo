@@ -1,4 +1,10 @@
 {
+    "dama/doctrine-test-bundle": {
+        "version": "7.1",
+        "recipe": {
+            "version": "4.0"
+        }
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
