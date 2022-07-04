@@ -8,6 +8,7 @@ Lors de la modification de la tâche, l’auteur ne peut pas être modifié.
 
 Pour les tâches déjà créées, il faut qu’elles soient rattachées à un utilisateur “anonyme”.
 
+----
 ### Choisir un rôle pour un utilisateur :
 Lors de la création d’un utilisateur, il doit être possible de choisir un rôle pour celui-ci. Les rôles listés sont les suivants :
 
@@ -19,7 +20,7 @@ Lors de la création d’un utilisateur, il doit être possible de choisir un r�
 
 - Lors de la modification d’un utilisateur, il est également possible de changer le rôle d’un utilisateur.
 
-
+---
 ### Implémentation de nouvelles fonctionnalités :
 
 - Seuls les utilisateurs ayant le rôle administrateur (ROLE_ADMIN) doivent pouvoir accéder aux pages de gestion des utilisateurs.
@@ -27,7 +28,7 @@ Lors de la création d’un utilisateur, il doit être possible de choisir un r�
 - Les tâches ne peuvent être supprimées que par les utilisateurs ayant créé les tâches en question.
 
 - Les tâches rattachées à l’utilisateur “anonyme” peuvent être supprimées uniquement par les utilisateurs ayant le rôle administrateur (ROLE_ADMIN).
-
+---
 ### Implémentation de tests automatisés :
 Il est demandé d’implémenter les tests automatisés (tests unitaires et fonctionnels) nécessaires pour assurer que le fonctionnement de l’application est bien en adéquation avec les demandes.
 
@@ -37,7 +38,7 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 
 - Il est demandé de fournir un rapport de couverture de code au terme du projet. Il faut que le taux de couverture soit supérieur à 70 %.
 
-
+---
 ## Requirements :
 - Apache 2.4
 
@@ -51,7 +52,7 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 ## Version du projet
  
 - symfony 5.4 
-
+---
 ## Pour installer ce projet :
 
 1 Clonez le dépôt depuis Github.
@@ -66,6 +67,11 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
     DATABASE_URL="mysql://db_user:db_password@127.0.0.1:3306/db_name?serverVersion=5.7
 
 ### Base de données avec doctrine
+Vous pouvez taper la commande ci-dessous pour créer et charger les fixtures  à la base de données
+
+    composer preparedata
+
+### Base de données avec doctrine manière détaillées
 
 4 Créer la base de donnée si cette base n'existe pas encore
 
@@ -85,8 +91,19 @@ Mettre à jour les entités en base de donnée
     php -S localhost:8000 -t public
 - sur votre navigateur écrire l'url :http://localhost:8000/
 
-
+---
 ## Préparation tests  :
+
+### Préparer vos données de test en un temps record
+
+Pour créer, mettre à jour et charger les fixtures de la base de données de l'environement de test en une commande :
+
+    composer preparedatatest
+
+Ou bien suivre les étapes de manière détaillées ci-dessous
+
+-----
+
 
 Pour créer la base de donnée de l'environement de test :
 
