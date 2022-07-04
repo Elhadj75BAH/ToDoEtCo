@@ -76,7 +76,7 @@ Mettre à jour les entités en base de donnée
     bin/console doctrine:schema:update -f
 
 ### Fixture :
-5 Lancer les fixtures pour avoir des données de test en base
+5 Lancer les fixtures pour avoir des données en base
 
     bin/console doctrine:fixtures:load
 
@@ -86,35 +86,64 @@ Mettre à jour les entités en base de donnée
 - sur votre navigateur écrire l'url :http://localhost:8000/
 
 
+## Préparation tests  :
+
+Pour créer la base de donnée de l'environement de test :
+
+    php bin/console --env=test doctrine:database:create
+
+Créer les tables de l'environement de test
+
+    php bin/console --env=test doctrine:schema:create
+
+### Astuce :
+
+    Une pratique courante consiste à ajouter le _test 
+    (suffixe) au nom de la base de données d'origine dans les tests. 
+    Si le nom de la base de données en production est
+    appelé par exemple, project8. 
+    Le nom de la base de données de test 
+    pourrait être project8_test.
+
+Pour charger les données que nous avons préparées dans la base de l'environement de test :
+
+    php bin/console --env=test doctrine:fixtures:load
+
 ## Les tests Unitaires :
-Tapez la commande ci-dessous 
+Tapez les commandes ci-dessous 
 
-    Pour faire le test unitaire sur l'entité User : php bin/phpunit tests/Entity/UserEntityTest.php --testdox
+Pour faire le test unitaire sur l'entité User :
 
+    php bin/phpunit tests/Entity/UserEntityTest.php --testdox
 
-    Pour faire le test unitaire sur l'entité Task : php bin/phpunit tests/Entity/TaskTest.php --testdox
+Pour faire le test unitaire sur l'entité Task : 
 
+    php bin/phpunit tests/Entity/TaskTest.php --testdox
 
 ## Les tests fonctionnels
-Tapez la commande ci-dessous
+Tapez les commandes ci-dessous
 
-    Pour le controller Default : php bin/phpunit tests/Controller/DefaultControllerTest.php --testdox
-    Pour la Controller Task : php bin/phpunit tests/Controller/TaskControllerTest.php --testdox
-    Pour le Controller User : php bin/phpunit tests/Controller/UserControllerTest.php --testdox
-   
+Pour le DefaultController : 
+
+    php bin/phpunit tests/Controller/DefaultControllerTest.php --testdox
+Pour TaskController :
+
+    php bin/phpunit tests/Controller/TaskControllerTest.php --testdox
+Pour le UserController : 
+
+    php bin/phpunit tests/Controller/UserControllerTest.php --testdox
 
 ### Compte :
 Pour vous connecter, vous pouvez vous inscrire directement depuis la page d'accueil.
 
 Ou Saisir les accès ci-dessous dans la page "se connecter".
 
+Nom d'utilisateur: 
 
+    username0
+Mot de passe : 
 
-    
-        Nom d'utilisateur: username0
-        Mot de passe : password
-    
-
+    password
 
 # Annexe :
 - Issues : https://github.com/Elhadj75BAH/TodoEtCo/issues
