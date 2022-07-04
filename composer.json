@@ -77,11 +77,17 @@
         "symfony/polyfill-php72": "*"
     },
     "scripts": {
-        "prepare": [
+        "preparedata": [
             "bin/console doctrine:database:drop --if-exists -f",
             "bin/console doctrine:database:create",
             "bin/console doctrine:schema:update -f",
             "bin/console doctrine:fixtures:load -n"
+        ],
+        "preparedatatest": [
+            "bin/console --env=test doctrine:database:drop --if-exists -f",
+            "bin/console --env=test doctrine:database:create",
+            "bin/console --env=test doctrine:schema:update -f",
+            "bin/console --env=test doctrine:fixtures:load -n"
         ],
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
