@@ -18,10 +18,10 @@ class UserControllerTest extends WebTestCase
 
 
         $client->submitForm('Inscription',[
-            'registration_form[username]'=>'username2',
+            'registration_form[username]'=>'username222',
             'registration_form[password][first]'=>'Password',
             'registration_form[password][second]'=>'Password',
-            'registration_form[email]'=>'username2@test.fr',
+            'registration_form[email]'=>'username222@test.fr',
             'registration_form[agreeTerms]'=>'1',
         ]);
         $this->assertResponseRedirects();
@@ -59,7 +59,7 @@ class UserControllerTest extends WebTestCase
 
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $testUser = $userRepository->findOneByUsername('Username0');
         $client->loginUser($testUser);
 
        $client->request('GET', '/users/create');
@@ -110,7 +110,7 @@ class UserControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $testUser = $userRepository->findOneByUsername('Username0');
         $client->loginUser($testUser);
 
         $client->request('GET', '/profile');
@@ -122,7 +122,7 @@ class UserControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $testUser = $userRepository->findOneByUsername('Username0');
         $client->loginUser($testUser);
 
         $client->request('GET', '/users');
