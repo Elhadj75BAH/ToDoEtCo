@@ -64,7 +64,7 @@ class TaskController extends AbstractController
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
-
+        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN'))
         if ($form->isSubmitted()&&$form->isValid()) {
             $taskRepository->add($task);
 
@@ -100,8 +100,7 @@ class TaskController extends AbstractController
     {
 
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN') &&
-            ($task->getUser() === null))
+        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN'))
         {
             $taskRepository->remove($task);
             $this->addFlash('success', 'La tâche a bien été supprimée.');
