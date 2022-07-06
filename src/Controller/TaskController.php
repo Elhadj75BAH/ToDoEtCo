@@ -23,7 +23,7 @@ class TaskController extends AbstractController
     }
 
     /**
-     * @Route("/tasksActive", name="task_valid", methods={"GET"})
+     * @Route("/tasks-active", name="task_valid", methods={"GET"})
      */
     public function taskActive(TaskRepository $taskRepository):Response
     {
