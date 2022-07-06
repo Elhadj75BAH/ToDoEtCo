@@ -18,7 +18,7 @@ class UserControllerTest extends WebTestCase
 
 
         $client->submitForm('Inscription',[
-            'registration_form[username]'=>'username222',
+            'registration_form[username]'=>'username10',
             'registration_form[password][first]'=>'Password',
             'registration_form[password][second]'=>'Password',
             'registration_form[email]'=>'username222@test.fr',
@@ -53,13 +53,12 @@ class UserControllerTest extends WebTestCase
     }
 
 
-
     public function testCreateAction(): void
     {
 
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Username0');
+        $testUser = $userRepository->findOneByUsername('admin');
         $client->loginUser($testUser);
 
        $client->request('GET', '/users/create');
@@ -77,16 +76,29 @@ class UserControllerTest extends WebTestCase
 
     }
 
+    public function testCreateActionByUser(): void
+    {
+        $client = static::createClient();
+        $userRepository = static::getContainer()->get(UserRepository::class);
+        $testUser = $userRepository->findOneByUsername('Username1');
+        $client->loginUser($testUser);
+
+        $client->request('GET', '/users/create');
+
+        $this->assertResponseStatusCodeSame(Response::HTTP_FORBIDDEN);
+
+    }
+
 
     public function testEditAction()
     {
 
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $testUser = $userRepository->findOneByUsername('admin');
         $client->loginUser($testUser);
 
-        $client->request('GET', '/users/48/edit');
+        $client->request('GET', '/users/3/edit');
         $this->assertResponseStatusCodeSame(Response::HTTP_OK);
 
         $client->submitForm('Modifier',[
@@ -110,7 +122,7 @@ class UserControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Username0');
+        $testUser = $userRepository->findOneByUsername('Username1');
         $client->loginUser($testUser);
 
         $client->request('GET', '/profile');
@@ -118,11 +130,20 @@ class UserControllerTest extends WebTestCase
 
     }
 
+    public function  testAccessToTheOfflineProfile()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/profile');
+        $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
+        $this->assertResponseRedirects();
+
+    }
+
     public function  testListUsers()
     {
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Username0');
+        $testUser = $userRepository->findOneByUsername('admin');
         $client->loginUser($testUser);
 
         $client->request('GET', '/users');
@@ -131,17 +152,15 @@ class UserControllerTest extends WebTestCase
     }
 
 
-    public function testLogOut()
+    public function  testAccessForAnUnauthorizedUser()
     {
-
         $client = static::createClient();
         $userRepository = static::getContainer()->get(UserRepository::class);
-        $testUser = $userRepository->findOneByUsername('Elhdajbah6');
+        $testUser = $userRepository->findOneByUsername('username1');
         $client->loginUser($testUser);
 
-         $crawler= $client->request('GET', '/');
-        $crawler->selectLink('Se déconnecter')->link();
-        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+        $client->request('GET', '/users');
+        $this->assertResponseStatusCodeSame(Response::HTTP_FORBIDDEN);
 
     }
 
