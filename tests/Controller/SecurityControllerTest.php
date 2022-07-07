@@ -38,12 +38,12 @@ class SecurityControllerTest extends WebTestCase
         $this->assertSelectorExists('.alert.alert-danger');
     }
 
-    public function testLoginWithWrongCredentials()
+    public function testLoginWithWrongPassword()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/login');
         $form = $crawler->selectButton('Se connecter')->form([
-            'username' => 'badusername',
+            'username' => 'username',
             'password' => 'badpassword'
         ]);
         $client->submit($form);
