@@ -167,7 +167,7 @@ Mot de passe :
     admin
 mot de passe:
 
-    password
+    azert123
 
 
 # Annexe :
