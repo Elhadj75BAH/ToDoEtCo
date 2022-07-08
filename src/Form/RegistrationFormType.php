@@ -30,7 +30,7 @@ class RegistrationFormType extends AbstractType
                 'second_options' => ['label' => 'Tapez le mot de passe à nouveau'],
             ])
             ->add('agreeTerms', CheckboxType::class, [
-                'label'=>'Je declare avoir accepté(e) les conditions générales ',
+                'label'=>'Je déclare avoir lu et accepté les conditions générales.',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
