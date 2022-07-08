@@ -64,7 +64,6 @@ class TaskController extends AbstractController
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
-        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN'))
         if ($form->isSubmitted()&&$form->isValid()) {
             $taskRepository->add($task);
 
