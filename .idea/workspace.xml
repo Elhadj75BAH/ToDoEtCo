@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b334049-a0e8-429b-8e2b-5bb72ae3844a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/tests/Controller/SecurityControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controller/SecurityControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,16 +216,7 @@
       <recent name="$PROJECT_DIR$/templates/user" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByUser">
-    <configuration name="SecurityControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.4" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="App\Tests\Controller\SecurityControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/SecurityControllerTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.TaskControllerTest.testEditActionByUser">
     <configuration name="TaskControllerTest.testDeleteAnonymeTaskByAdmin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -261,17 +253,26 @@
       <TestRunner class="App\Tests\Controller\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" method="testDeleteTaskAction" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="TaskControllerTest.testEditActionByUser" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="App\Tests\Controller\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" method="testEditActionByUser" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.TaskControllerTest.testEditActionByUser" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByUser" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByAdmin" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteHisTask" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteTaskAction" />
-        <item itemvalue="PHPUnit.SecurityControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -344,7 +345,8 @@
       <workItem from="1657092075105" duration="17548000" />
       <workItem from="1657134455496" duration="272000" />
       <workItem from="1657134808677" duration="2218000" />
-      <workItem from="1657188715673" duration="3787000" />
+      <workItem from="1657188715673" duration="4062000" />
+      <workItem from="1657268812099" duration="2525000" />
     </task>
     <servers />
   </component>

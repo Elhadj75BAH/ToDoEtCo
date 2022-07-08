@@ -129,11 +129,11 @@ Pour charger les données que nous avons préparées dans la base de l'environem
 ## Les tests Unitaires :
 Tapez les commandes ci-dessous 
 
-Pour faire le test unitaire sur l'entité User :
+Pour faire les tests unitaires de l'entité User :
 
     php bin/phpunit tests/Entity/UserEntityTest.php --testdox
 
-Pour faire le test unitaire sur l'entité Task : 
+Pour faire les tests unitaires de l'entité Task : 
 
     php bin/phpunit tests/Entity/TaskTest.php --testdox
 
@@ -151,16 +151,24 @@ Pour le UserController :
     php bin/phpunit tests/Controller/UserControllerTest.php --testdox
 
 ### Compte :
-Pour vous connecter, vous pouvez vous inscrire directement depuis la page d'accueil.
+Pour pouvoir vous connecter, vous devez vous inscrire directement depuis la page d'accueil.
 
 Ou Saisir les accès ci-dessous dans la page "se connecter".
 
 Nom d'utilisateur: 
 
-    username0
+    Username1
 Mot de passe : 
 
     password
+
+### compte admin:
+
+    admin
+mot de passe:
+
+    password
+
 
 # Annexe :
 - Issues : https://github.com/Elhadj75BAH/TodoEtCo/issues
