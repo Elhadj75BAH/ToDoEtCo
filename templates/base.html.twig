@@ -44,6 +44,9 @@
         {% if app.user %}
             {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
+                <a href="{{ path('user_list') }}" class="btn btn-primary">Gestion utilisateur</a>
+                <a href="{{ path('task_list') }}" class="btn btn-primary">Gestion des taches</a>
+                <a href="{{ path('task_valid') }}" class="btn btn-primary">Gestion taches validées</a>
             {% endif %}
             <a href="{{ path('app_logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
             <a href="{{ path('profile_') }}" class="pull-right btn btn-primary"> Mon profil</a>
