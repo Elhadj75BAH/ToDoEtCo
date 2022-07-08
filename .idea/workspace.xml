@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b334049-a0e8-429b-8e2b-5bb72ae3844a" name="Changes" comment="" />
+    <list default="true" id="6b334049-a0e8-429b-8e2b-5bb72ae3844a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +215,10 @@
       <recent name="$PROJECT_DIR$/templates/user" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TaskControllerTest.testEditActionByUser">
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/todo/reports/coverage/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="TaskControllerTest.testDeleteAnonymeTaskByAdmin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -241,15 +246,6 @@
       <TestRunner class="App\Tests\Controller\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" method="testDeleteHisTask" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="TaskControllerTest.testDeleteTaskAction" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.4" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="App\Tests\Controller\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" method="testDeleteTaskAction" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="TaskControllerTest.testEditActionByUser" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -265,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html" />
         <item itemvalue="PHPUnit.TaskControllerTest.testEditActionByUser" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByUser" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByAdmin" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteHisTask" />
-        <item itemvalue="PHPUnit.TaskControllerTest.testDeleteTaskAction" />
       </list>
     </recent_temporary>
   </component>
@@ -343,7 +339,7 @@
       <workItem from="1657134455496" duration="272000" />
       <workItem from="1657134808677" duration="2218000" />
       <workItem from="1657188715673" duration="4062000" />
-      <workItem from="1657268812099" duration="8668000" />
+      <workItem from="1657268812099" duration="9670000" />
     </task>
     <servers />
   </component>
