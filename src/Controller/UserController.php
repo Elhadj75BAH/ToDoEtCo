@@ -14,13 +14,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends AbstractController
 {
-
-
-
     /**
      * @Route("/users", name="user_list")
      */
-    public function listUsers(UserRepository $userRepository):Response
+    public function listUsers(UserRepository $userRepository): Response
     {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         return $this->render('user/list.html.twig', [
@@ -31,18 +28,18 @@ class UserController extends AbstractController
     /**
      * @Route("/users/create", name="user_create")
      */
-    public function createAction(Request $request,
-                                 UserRepository $userRepository,
-                                 UserPasswordHasherInterface $userPasswordHasher)
-    {
+    public function createAction(
+        Request $request,
+        UserRepository $userRepository,
+        UserPasswordHasherInterface $userPasswordHasher
+    ) {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()&&$form->isValid()) {
-
+        if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
@@ -64,17 +61,18 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{id}/edit", name="user_edit")
      */
-    public function editAction(User $user,
-                               Request $request,
-                               UserPasswordHasherInterface $userPasswordHasher,
-                               UserRepository $userRepository)
-    {
+    public function editAction(
+        User $user,
+        Request $request,
+        UserPasswordHasherInterface $userPasswordHasher,
+        UserRepository $userRepository
+    ) {
         $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(UserType::class, $user);
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()&& $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword(
                 $userPasswordHasher->hashPassword(
                     $user,
