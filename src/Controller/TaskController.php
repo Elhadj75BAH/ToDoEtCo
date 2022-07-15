@@ -15,22 +15,23 @@ class TaskController extends AbstractController
     /**
      * @Route("/tasks", name="task_list" ,methods={"GET"})
      */
-    public function listAction(TaskRepository $taskRepository):Response
+    public function listAction(TaskRepository $taskRepository): Response
     {
-        return $this->render('task/list.html.twig',
-            ['tasks' =>$taskRepository ->findBy(['isDone'=>'0'])
-            ]);
+        return $this->render(
+            'task/list.html.twig',
+            ['tasks' => $taskRepository ->findBy(['isDone' => '0'])
+            ]
+        );
     }
 
     /**
      * @Route("/tasks-active", name="task_valid", methods={"GET"})
      */
-    public function taskActive(TaskRepository $taskRepository):Response
+    public function taskActive(TaskRepository $taskRepository): Response
     {
-        return $this->render('task/done.html.twig',[
-            'taskIsdone'=>$taskRepository->findBy(['isDone'=>'1'])
-            ]
-        );
+        return $this->render('task/done.html.twig', [
+            'taskIsdone' => $taskRepository->findBy(['isDone' => '1'])
+            ]);
     }
 
     /**
@@ -44,7 +45,7 @@ class TaskController extends AbstractController
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted()&& $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $task->setUser($this->getUser());
             $taskRepository->add($task);
             $this->addFlash('success', 'La tâche a été bien été ajoutée.');
@@ -64,7 +65,7 @@ class TaskController extends AbstractController
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
-        if ($form->isSubmitted()&&$form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $taskRepository->add($task);
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');
@@ -99,14 +100,12 @@ class TaskController extends AbstractController
     {
 
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN'))
-        {
+        if ($task->getUser() === $this->getUser() || $this->isGranted('ROLE_ADMIN')) {
             $taskRepository->remove($task);
             $this->addFlash('success', 'La tâche a bien été supprimée.');
             return $this->redirectToRoute('task_list');
         }
-        $this->addFlash('error','Vous ne pouvez pas supprimer cette tache ');
+        $this->addFlash('error', 'Vous ne pouvez pas supprimer cette tache ');
         return $this->redirectToRoute('task_list');
     }
-
 }
