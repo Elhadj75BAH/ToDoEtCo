@@ -1,0 +1,9 @@
+recommendations:
+  php.symfony.disable_debug:
+    enabled: false
+
+  php.disable_symfony_resource_tracking:
+    enabled: false
+
+  php.php_preloading:
+    enabled: false
