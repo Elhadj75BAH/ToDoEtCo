@@ -5,8 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b334049-a0e8-429b-8e2b-5bb72ae3844a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.blackfire.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/todo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/todo.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/DefaultController.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/RegistrationController.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/SecurityController.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/TaskController.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/UserController.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Controller/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/DataFixtures/AppFixtures.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/DataFixtures/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/DataFixtures/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Entity/Task.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Entity/User.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Entity/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Entity/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Form/RegistrationFormType.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Form/TaskType.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Form/UserType.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Form/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Form/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Kernel.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Repository/TaskRepository.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Repository/UserRepository.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Repository/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Repository/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Security/LoginAppAuthenticator.php.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Security/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/Security/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_css/custom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_css/nv.d3.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_css/octicons.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_icons/file-code.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_icons/file-directory.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_js/d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_js/file.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_js/nv.d3.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/_js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/coverage.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/coverage/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Controller/SecurityControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Controller/SecurityControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,6 +226,7 @@
       <path value="$PROJECT_DIR$/vendor/php-webdriver/webdriver" />
       <path value="$PROJECT_DIR$/vendor/symfony/panther" />
       <path value="$PROJECT_DIR$/vendor/dama/doctrine-test-bundle" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
     </include_path>
   </component>
   <component name="ProjectId" id="26bCEUzBII4FR68SppmIcOBgpN4" />
@@ -220,6 +267,15 @@
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/todo/reports/coverage/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
+    <configuration name="SecurityControllerTest.testLogout" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="App\Tests\Controller\SecurityControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/SecurityControllerTest.php" method="testLogout" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="TaskControllerTest.testDeleteAnonymeTaskByAdmin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -238,15 +294,6 @@
       <TestRunner class="App\Tests\Controller\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" method="testDeleteAnonymeTaskByUser" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="TaskControllerTest.testDeleteHisTask" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.4" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="App\Tests\Controller\TaskControllerTest" configuration_file="$PROJECT_DIR$/phpunit.xml.dist" file="$PROJECT_DIR$/tests/Controller/TaskControllerTest.php" method="testDeleteHisTask" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="TaskControllerTest.testEditActionByUser" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -263,10 +310,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.index.html" />
+        <item itemvalue="PHPUnit.SecurityControllerTest.testLogout" />
         <item itemvalue="PHPUnit.TaskControllerTest.testEditActionByUser" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByUser" />
         <item itemvalue="PHPUnit.TaskControllerTest.testDeleteAnonymeTaskByAdmin" />
-        <item itemvalue="PHPUnit.TaskControllerTest.testDeleteHisTask" />
       </list>
     </recent_temporary>
   </component>
@@ -344,6 +391,9 @@
       <workItem from="1657477932268" duration="893000" />
       <workItem from="1657789237384" duration="6025000" />
       <workItem from="1657814265244" duration="634000" />
+      <workItem from="1657872290789" duration="5748000" />
+      <workItem from="1657962776489" duration="1950000" />
+      <workItem from="1657969467994" duration="333000" />
     </task>
     <servers />
   </component>
