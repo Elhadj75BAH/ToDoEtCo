@@ -1,14 +1,13 @@
 <?php
 
 namespace App\Tests\Controller;
+
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
 class SecurityControllerTest extends WebTestCase
 {
-
-
     public function testLoginSuccess()
     {
         $client = static::createClient();
@@ -61,11 +60,8 @@ class SecurityControllerTest extends WebTestCase
         $testUser = $userRepository->findOneByUsername('username1');
         $client->loginUser($testUser);
 
-        $crawler= $client->request('GET', '/logout');
+        $crawler = $client->request('GET', '/logout');
 
         $this->assertResponseStatusCodeSame(Response::HTTP_FOUND);
-
     }
-
-
 }
