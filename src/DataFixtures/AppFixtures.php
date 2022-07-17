@@ -17,15 +17,6 @@ class AppFixtures extends Fixture
     }
     public function load(ObjectManager $manager): void
     {
-
-        $admin = new User();
-        $hash = $this->userPasswordHasher->hashPassword($admin, 'azert123');
-        $admin->setUsername('admin');
-        $admin->setPassword($hash);
-        $admin->setEmail('admin@admin.fr');
-        $admin->setRoles(["ROLE_ADMIN"]);
-        $manager->persist($admin);
-
          $users = [];
         for ($u = 1; $u < 5; $u++) {
             $user = new User();
@@ -36,14 +27,6 @@ class AppFixtures extends Fixture
             $manager->persist($user);
             $users[] = $user;
         }
-
-        for ($tk = 0; $tk < 5; $tk++) {
-            $taskanonym = new Task();
-            $taskanonym->setTitle("La tache anonyme numéro $tk");
-            $taskanonym->setContent("une tache ANONYME ");
-            $manager->persist($taskanonym);
-        }
-
         for ($t = 5; $t < 15; $t++) {
             $task = new Task();
             $task->setTitle("tache numéro $t");
@@ -52,7 +35,6 @@ class AppFixtures extends Fixture
             $task->setUser($users [array_rand($users)]);
             $manager->persist($task);
         }
-
         for ($t = 15; $t < 25; $t++) {
             $task = new Task();
             $task->setTitle("tache numéro $t");
@@ -61,7 +43,6 @@ class AppFixtures extends Fixture
             $task->setUser($users [array_rand($users)]);
             $manager->persist($task);
         }
-
         $manager->flush();
     }
 }
