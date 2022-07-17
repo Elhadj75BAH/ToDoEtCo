@@ -48,8 +48,10 @@
                 <a href="{{ path('task_list') }}" class="btn btn-primary">Gestion des taches</a>
                 <a href="{{ path('task_valid') }}" class="btn btn-primary">Gestion taches validées</a>
             {% endif %}
+
             <a href="{{ path('app_logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
             <a href="{{ path('profile_') }}" class="pull-right btn btn-primary"> Mon profil</a>
+            <a href="{{ path('task_create') }}" class="pull-right btn btn-primary">Créer une tâche</a>
         {% endif %}
 
         {% if not app.user and 'login' != app.request.attributes.get('_route') %}

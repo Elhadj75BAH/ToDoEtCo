@@ -1,13 +1,13 @@
-{% include'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-
+{% block header_img %}<img class="slide-image" src="{{ asset('img/todolist_content.jpg') }}" alt="todo list">{% endblock %}
 {% block  body%}
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row">
             <div class="col-md-2 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
                     <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg" alt="Avatar">
-                    <span class="font-weight-bold"> {{ app.user.username }}</span>
+                    <span class="font-weight-bold"> {{ app.user.username }} | </span>
                     <span class="text-black-50"> {{ app.user.email }}</span>
 
                 </div>
@@ -18,11 +18,11 @@
                         <div class="col-md-4">Username<br>{{ app.user.username }}</div>
                         {% if is_granted('ROLE_ADMIN') %}
                             <div class="col-md-2">Roles<br>Admin</div>
+                            <a href="{{ path('user_edit', {'id' : app.user.id}) }} "class="btn btn-primary mt-2">Modifier</a>
                         {% endif %}
                         {% if is_granted('ROLE_USER') %}
-                            <div class="col-md-2">Roles<br>User</div>
+                            <div class="col-md-4">Email<br>{{ app.user.email }}</div>
                         {% endif %}
-                        <a href="{{ path('user_edit', {'id' : app.user.id}) }} "class="btn btn-primary mt-2">Modifier</a>
                     </div>
 
                 </div>
