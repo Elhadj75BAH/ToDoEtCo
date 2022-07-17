@@ -4,7 +4,8 @@
 
 ## Corrections d'anomalies :
 Une tâche doit être attachée à un utilisateur
-Actuellement, lorsqu’une tâche est créée, elle n’est pas rattachée à un utilisateur. Il vous est demandé d’apporter les corrections nécessaires afin qu’automatiquement, à la sauvegarde de la tâche, l’utilisateur authentifié soit rattaché à la tâche nouvellement créée.
+
+l’utilisateur authentifié doit être rattaché à la tâche qu'il a créée.
 
 Lors de la modification de la tâche, l’auteur ne peut pas être modifié.
 
