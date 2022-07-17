@@ -37,7 +37,6 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 
 - Ces tests doivent être implémentés avec PHPUnit ; vous pouvez aussi utiliser Behat pour la partie fonctionnelle.
 
-- Vous prévoirez des données de tests afin de pouvoir prouver le fonctionnement dans les cas explicités dans ce document.
 
 - Il est demandé de fournir un rapport de couverture de code au terme du projet. Il faut que le taux de couverture soit supérieur à 70 %.
 
