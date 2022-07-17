@@ -1,4 +1,6 @@
 # Description du besoin :
+![image-todo](https://user-images.githubusercontent.com/52566974/179390495-2fb2343e-9464-49ed-b3cf-e8d6b7779131.png)
+
 
 ## Corrections d'anomalies :
 Une tâche doit être attachée à un utilisateur
@@ -173,6 +175,8 @@ mot de passe:
 # Annexe :
 - Issues : https://github.com/Elhadj75BAH/TodoEtCo/issues
 - Code climate : https://codeclimate.com/github/Elhadj75BAH/ToDoEtCo
+- coverage-test ![image-coverage-generate-tests](https://user-images.githubusercontent.com/52566974/179390572-5c79cef5-1fe0-45de-bce9-36812cc3b2b9.png)
+
 
 
 
