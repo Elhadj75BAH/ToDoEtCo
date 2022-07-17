@@ -41,6 +41,14 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 - Il est demandé de fournir un rapport de couverture de code au terme du projet. Il faut que le taux de couverture soit supérieur à 70 %.
 
 ---
+## Version du projet
+ 
+- symfony 5.4 
+
+---
+
+# Pour installer ce projet :
+
 ## Requirements :
 - Apache 2.4
 
@@ -51,11 +59,7 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 - Composer
 
 
-## Version du projet
- 
-- symfony 5.4 
 ---
-## Pour installer ce projet :
 
 1 Clonez le dépôt depuis Github.
 
