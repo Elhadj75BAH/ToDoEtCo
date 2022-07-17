@@ -26,16 +26,14 @@ class AppFixtures extends Fixture
             $user->setPassword($hash);
             $manager->persist($user);
             $users[] = $user;
-        }
-        for ($t = 5; $t < 15; $t++) {
+        }for ($t = 5; $t < 15; $t++) {
             $task = new Task();
             $task->setTitle("tache numéro $t");
             $task->setContent("une tache à réaliser ");
             $task->toggle(0);
             $task->setUser($users [array_rand($users)]);
             $manager->persist($task);
-        }
-        for ($t = 15; $t < 25; $t++) {
+        }for ($t = 15; $t < 25; $t++) {
             $task = new Task();
             $task->setTitle("tache numéro $t");
             $task->setContent("une tache validée ");
