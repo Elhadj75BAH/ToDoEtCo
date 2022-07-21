@@ -52,7 +52,7 @@ Il est demandé d’implémenter les tests automatisés (tests unitaires et fonc
 ## Requirements :
 - Apache 2.4
 
-- PHP >=7.2
+- PHP >=7.4
 
 - MySQL 5.7
 
